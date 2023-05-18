@@ -18,7 +18,8 @@ function Quote() {
     async function fetchData() {
       setIsLoading(true);
       await new Promise((resolve) => setTimeout(resolve, 4000));
-      const response = await axios.get(`https://api.quotable.io/random`);
+      
+      const response = await axios.get(import.meta.env.VITE_APP_API_URL);
       setData(response.data);
       setIsLoading(false);
     }
